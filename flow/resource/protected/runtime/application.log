@@ -1,0 +1,955 @@
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:41:55 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:41:55 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:41:55 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:41:55 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:41:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:41:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:41:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:41:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:41:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=230)
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "coreMessages" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "errorHandler" application component
+2015/03/22 13:41:55 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:41:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=230)
+2015/03/22 13:41:55 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:41:55 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:41:55 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:41:55 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:41:55 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:41:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:41:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:41:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:41:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:41:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=230)
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "coreMessages" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "errorHandler" application component
+2015/03/22 13:41:55 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:41:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=230)
+2015/03/22 13:41:55 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:41:55 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:41:55 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:41:55 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:41:55 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:41:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:41:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:41:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:41:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:41:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=230)
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "coreMessages" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "errorHandler" application component
+2015/03/22 13:41:55 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:41:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=230)
+2015/03/22 13:41:55 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:41:55 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:41:55 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:41:56 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:41:56 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:41:56 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:41:56 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:41:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:41:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:41:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:41:56 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:41:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=230)
+2015/03/22 13:41:56 [trace] [system.CModule] Loading "coreMessages" application component
+2015/03/22 13:41:56 [trace] [system.CModule] Loading "errorHandler" application component
+2015/03/22 13:41:56 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:41:56 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=230)
+2015/03/22 13:41:56 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/03/22 13:41:56 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:41:56 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:41:56 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:41:56 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:42:03 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:42:03 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:42:03 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:42:03 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:42:03 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:42:03 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:42:03 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:42:03 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:42:03 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:42:03 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:42:03 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:42:03 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:42:03 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:42:03 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=230)
+2015/03/22 13:42:03 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/03/22 13:42:03 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:42:03 [trace] [system.base.CModule] Loading "communications" module
+2015/03/22 13:42:03 [trace] [system.base.CModule] Loading "rights" module
+2015/03/22 13:42:03 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:42:03 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:42:03 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:42:03 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:42:51 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:42:51 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:42:51 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:42:51 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:42:51 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:42:51 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/03/22 13:42:51 [trace] [system.CModule] Loading "coreMessages" application component
+2015/03/22 13:42:55 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:42:55 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:42:55 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:42:55 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:42:55 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:42:55 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:43:01 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:43:01 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:43:01 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:43:01 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:43:01 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:43:01 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:43:01 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:43:01 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:43:01 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:43:01 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:43:10 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:43:10 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:43:10 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:43:10 [trace] [system.base.CModule] Loading "communications" module
+2015/03/22 13:43:10 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:43:10 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:43:10 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:43:10 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:43:10 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:43:10 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:43:10 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:43:10 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:43:10 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:43:10 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:43:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=118)
+2015/03/22 13:43:10 [trace] [system.web.filters.CFilterChain] Running filter DefaultController.filteraccessControl()
+2015/03/22 13:43:10 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:43:10 [trace] [system.db.ar.CActiveRecord] Supervisor.find()
+2015/03/22 13:43:10 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `comm_flow_supervisor`
+2015/03/22 13:43:10 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `comm_flow_supervisor`
+2015/03/22 13:43:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `comm_flow_supervisor` `t` WHERE pin=:pin LIMIT 1
+2015/03/22 13:43:10 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:43:10 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:43:10 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:43:18 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:43:18 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:43:18 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:43:18 [trace] [system.base.CModule] Loading "communications" module
+2015/03/22 13:43:18 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:43:18 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:43:18 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:43:18 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:43:18 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:43:18 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:43:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:43:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:43:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:43:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:43:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=118)
+2015/03/22 13:43:18 [trace] [system.web.filters.CFilterChain] Running filter DefaultController.filteraccessControl()
+2015/03/22 13:43:18 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:43:18 [trace] [system.db.ar.CActiveRecord] Supervisor.find()
+2015/03/22 13:43:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `comm_flow_supervisor`
+2015/03/22 13:43:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `comm_flow_supervisor`
+2015/03/22 13:43:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `comm_flow_supervisor` `t` WHERE pin=:pin LIMIT 1
+2015/03/22 13:43:18 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:43:18 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:43:18 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:43:34 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:43:34 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:43:34 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:43:34 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:43:34 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:43:34 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:43:34 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:43:34 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=118)
+2015/03/22 13:43:34 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:43:34 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=118)
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "messages" application component
+2015/03/22 13:43:34 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles_fields`
+2015/03/22 13:43:34 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles_fields`
+2015/03/22 13:43:34 [trace] [system.db.ar.CActiveRecord] ProfileField.findAll()
+2015/03/22 13:43:34 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_profiles_fields` `t` WHERE visible>=1 ORDER BY position
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:43:34 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "coreMessages" application component
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "errorHandler" application component
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:43:34 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:43:34 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:43:34 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:43:34 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:43:34 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:43:34 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:43:34 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=118)
+2015/03/22 13:43:34 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:43:34 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:43:50 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:43:50 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:43:50 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:43:50 [trace] [system.base.CModule] Loading "communications" module
+2015/03/22 13:43:50 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:43:50 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:43:50 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:43:50 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:43:50 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:43:50 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:43:50 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:43:50 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:43:50 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:43:50 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:43:50 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=118)
+2015/03/22 13:43:50 [trace] [system.web.filters.CFilterChain] Running filter DefaultController.filteraccessControl()
+2015/03/22 13:43:50 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:43:50 [trace] [system.db.ar.CActiveRecord] Supervisor.find()
+2015/03/22 13:43:50 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `comm_flow_supervisor`
+2015/03/22 13:43:50 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `comm_flow_supervisor`
+2015/03/22 13:43:50 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `comm_flow_supervisor` `t` WHERE pin=:pin LIMIT 1
+2015/03/22 13:43:50 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:43:50 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:43:50 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:43:52 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:43:52 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:43:52 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:43:52 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:43:52 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:43:52 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:43:52 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:43:52 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:43:52 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:43:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:43:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:43:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:43:52 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:43:52 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=118)
+2015/03/22 13:43:52 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/03/22 13:43:52 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:43:52 [trace] [system.base.CModule] Loading "communications" module
+2015/03/22 13:43:52 [trace] [system.base.CModule] Loading "rights" module
+2015/03/22 13:43:52 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:43:52 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:43:52 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:43:52 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:43:54 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:43:54 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:43:54 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:43:54 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:43:54 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:43:54 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:43:54 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:43:54 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:43:54 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:43:54 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=118)
+2015/03/22 13:43:54 [trace] [system.web.filters.CFilterChain] Running filter TransportController.filteraccessControl()
+2015/03/22 13:43:54 [trace] [system.db.ar.CActiveRecord] TransportFlowSupervisor.find()
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `transport_flow_supervisor`
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `transport_flow_supervisor`
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow_supervisor` `t` WHERE pin=:pin LIMIT 1
+2015/03/22 13:43:54 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:43:54 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:43:54 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:43:54 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:43:54 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:43:54 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:43:54 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:43:54 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:43:54 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:43:54 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=118)
+2015/03/22 13:43:54 [trace] [system.web.filters.CFilterChain] Running filter TransportController.filteraccessControl()
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `transport_flow`
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `transport_flow`
+2015/03/22 13:43:54 [trace] [system.db.ar.CActiveRecord] Transport.count()
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `transport_flow` `t` WHERE t.pin=:ycp0
+2015/03/22 13:43:54 [trace] [system.db.ar.CActiveRecord] Transport.findAll()
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow` `t` WHERE t.pin=:ycp0 ORDER BY t.id desc LIMIT 10
+2015/03/22 13:43:54 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:43:54 [trace] [system.db.ar.CActiveRecord] TransportFlowSupervisor.find()
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `transport_flow_supervisor`
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `transport_flow_supervisor`
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow_supervisor` `t` WHERE pin=:pin LIMIT 1
+2015/03/22 13:43:54 [trace] [system.db.ar.CActiveRecord] TransportFlowSupervisor.find()
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow_supervisor` `t` WHERE pin=:pin LIMIT 1
+2015/03/22 13:43:54 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:43:54 [trace] [system.db.ar.CActiveRecord] Transport.count()
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `transport_flow` `t` WHERE t.pin=:ycp1
+2015/03/22 13:43:54 [trace] [system.db.ar.CActiveRecord] Transport.findAll()
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow` `t` WHERE t.pin=:ycp1 ORDER BY t.id desc LIMIT 10
+2015/03/22 13:43:54 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:43:54 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:43:54 [trace] [system.CModule] Loading "coreMessages" application component
+2015/03/22 13:43:54 [trace] [system.CModule] Loading "format" application component
+2015/03/22 13:43:54 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:43:54 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:43:54 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:43:54 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:43:54 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:43:54 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:43:54 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:43:55 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:43:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:43:55 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:43:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:43:55 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:43:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:43:55 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:43:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:43:55 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:43:55 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:43:55 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:43:55 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:43:55 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:43:55 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:43:55 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:43:55 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:43:55 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:43:55 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:43:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:43:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:43:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:43:55 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:43:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=118)
+2015/03/22 13:43:55 [trace] [system.CModule] Loading "coreMessages" application component
+2015/03/22 13:43:55 [trace] [system.CModule] Loading "errorHandler" application component
+2015/03/22 13:43:55 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:43:55 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=118)
+2015/03/22 13:43:55 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/03/22 13:43:55 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:43:55 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:43:55 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:43:55 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:43:59 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:43:59 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:43:59 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:43:59 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:43:59 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:43:59 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:43:59 [trace] [system.db.ar.CActiveRecord] User.findByAttributes()
+2015/03/22 13:43:59 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:43:59 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:43:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:43:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:43:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:43:59 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:43:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`username`=:yp0)
+2015/03/22 13:43:59 [trace] [system.db.ar.CActiveRecord] User.find()
+2015/03/22 13:43:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (username=:u)
+2015/03/22 13:43:59 [trace] [system.db.ar.CActiveRecord] User.findByAttributes()
+2015/03/22 13:43:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`activkey` AS `t0_c4`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`username`=:yp0)
+2015/03/22 13:43:59 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:43:59 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=1126)
+2015/03/22 13:44:00 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:44:00 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:44:00 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:44:00 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:44:00 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:44:00 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:44:00 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:44:00 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:44:00 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:44:00 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:44:00 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:44:00 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:44:00 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:44:00 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=1126)
+2015/03/22 13:44:00 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/03/22 13:44:00 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:44:00 [trace] [system.base.CModule] Loading "communications" module
+2015/03/22 13:44:00 [trace] [system.base.CModule] Loading "rights" module
+2015/03/22 13:44:00 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:44:00 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:44:00 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:44:00 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:44:27 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:44:27 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:44:27 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:44:27 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:44:27 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:44:27 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:44:27 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:44:27 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:44:27 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:44:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:44:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:44:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:44:27 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:44:27 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=1126)
+2015/03/22 13:44:28 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/03/22 13:44:28 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:44:28 [trace] [system.base.CModule] Loading "communications" module
+2015/03/22 13:44:28 [trace] [system.base.CModule] Loading "rights" module
+2015/03/22 13:44:28 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:44:28 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:44:28 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:44:28 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:44:41 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:44:41 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:44:41 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:44:41 [trace] [system.base.CModule] Loading "communications" module
+2015/03/22 13:44:41 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:44:41 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:44:41 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:44:41 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:44:41 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:44:41 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:44:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:44:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:44:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:44:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:44:41 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=1126)
+2015/03/22 13:44:41 [trace] [system.web.filters.CFilterChain] Running filter DefaultController.filteraccessControl()
+2015/03/22 13:44:41 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:44:41 [trace] [system.db.ar.CActiveRecord] Supervisor.find()
+2015/03/22 13:44:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `comm_flow_supervisor`
+2015/03/22 13:44:41 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `comm_flow_supervisor`
+2015/03/22 13:44:41 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `comm_flow_supervisor` `t` WHERE pin=:pin LIMIT 1
+2015/03/22 13:44:41 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:44:41 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:44:41 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:45:36 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:45:36 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:45:36 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:45:36 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:45:36 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:45:36 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:45:36 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:45:36 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:45:36 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:45:36 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=118)
+2015/03/22 13:45:36 [trace] [system.web.filters.CFilterChain] Running filter TransportController.filteraccessControl()
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `transport_flow`
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `transport_flow`
+2015/03/22 13:45:36 [trace] [system.db.ar.CActiveRecord] Transport.count()
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `transport_flow` `t` WHERE t.pin=:ycp0
+2015/03/22 13:45:36 [trace] [system.db.ar.CActiveRecord] Transport.findAll()
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow` `t` WHERE t.pin=:ycp0 ORDER BY t.id desc LIMIT 10
+2015/03/22 13:45:36 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:45:36 [trace] [system.db.ar.CActiveRecord] TransportFlowSupervisor.find()
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `transport_flow_supervisor`
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `transport_flow_supervisor`
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow_supervisor` `t` WHERE pin=:pin LIMIT 1
+2015/03/22 13:45:36 [trace] [system.db.ar.CActiveRecord] TransportFlowSupervisor.find()
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow_supervisor` `t` WHERE pin=:pin LIMIT 1
+2015/03/22 13:45:36 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:45:36 [trace] [system.db.ar.CActiveRecord] Transport.count()
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `transport_flow` `t` WHERE t.pin=:ycp1
+2015/03/22 13:45:36 [trace] [system.db.ar.CActiveRecord] Transport.findAll()
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow` `t` WHERE t.pin=:ycp1 ORDER BY t.id desc LIMIT 10
+2015/03/22 13:45:36 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:45:36 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:45:36 [trace] [system.CModule] Loading "coreMessages" application component
+2015/03/22 13:45:36 [trace] [system.CModule] Loading "format" application component
+2015/03/22 13:45:36 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:45:36 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:45:36 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:45:36 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:45:36 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:45:36 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:45:36 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:45:36 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:45:36 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:45:36 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:45:36 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:47:05 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:47:05 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:47:05 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:47:06 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:47:06 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:47:06 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "coreMessages" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "errorHandler" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:47:06 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:47:06 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "coreMessages" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "errorHandler" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:47:07 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/03/22 13:47:07 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:47:07 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:47:07 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:47:07 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:47:06 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "coreMessages" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "errorHandler" application component
+2015/03/22 13:47:07 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:47:07 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:47:07 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/03/22 13:47:07 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:47:07 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:47:07 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:47:07 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:47:06 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "coreMessages" application component
+2015/03/22 13:47:06 [trace] [system.CModule] Loading "errorHandler" application component
+2015/03/22 13:47:07 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:47:07 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:47:07 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/03/22 13:47:07 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:47:07 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:47:07 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:47:07 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:47:09 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:47:09 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:47:09 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:47:09 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:47:09 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:47:09 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:47:09 [trace] [system.db.ar.CActiveRecord] User.findByAttributes()
+2015/03/22 13:47:09 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:47:09 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:47:09 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:47:09 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:47:09 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:47:09 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:47:09 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`username`=:yp0)
+2015/03/22 13:47:09 [trace] [system.db.ar.CActiveRecord] User.find()
+2015/03/22 13:47:09 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (username=:u)
+2015/03/22 13:47:09 [trace] [system.db.ar.CActiveRecord] User.findByAttributes()
+2015/03/22 13:47:09 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`activkey` AS `t0_c4`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`username`=:yp0)
+2015/03/22 13:47:09 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:47:09 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=312)
+2015/03/22 13:47:09 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:47:09 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:47:09 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:47:09 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:47:09 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:47:09 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:47:09 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:47:09 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:47:09 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:47:10 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:47:10 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:47:10 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:47:10 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:47:10 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=312)
+2015/03/22 13:47:10 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/03/22 13:47:10 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:47:10 [trace] [system.base.CModule] Loading "communications" module
+2015/03/22 13:47:10 [trace] [system.base.CModule] Loading "rights" module
+2015/03/22 13:47:10 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:47:10 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:47:10 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:47:10 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:47:13 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:47:13 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:47:13 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:47:13 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:47:13 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:47:13 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:47:13 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:47:13 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:47:13 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:47:13 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=312)
+2015/03/22 13:47:14 [trace] [system.web.filters.CFilterChain] Running filter TransportController.filteraccessControl()
+2015/03/22 13:47:14 [trace] [system.db.ar.CActiveRecord] TransportFlowSupervisor.find()
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `transport_flow_supervisor`
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `transport_flow_supervisor`
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow_supervisor` `t` WHERE pin=:pin LIMIT 1
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:47:14 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:47:14 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:47:14 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:47:14 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=312)
+2015/03/22 13:47:14 [trace] [system.web.filters.CFilterChain] Running filter TransportController.filteraccessControl()
+2015/03/22 13:47:14 [trace] [system.db.ar.CActiveRecord] TransportFlowSupervisor.find()
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `transport_flow_supervisor`
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `transport_flow_supervisor`
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow_supervisor` `t` WHERE pin=:pin and special=:special LIMIT 1
+2015/03/22 13:47:14 [trace] [system.db.ar.CActiveRecord] TransportFlowSupervisor.find()
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow_supervisor` `t` WHERE pin=:pin LIMIT 1
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `transport_flow`
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `transport_flow`
+2015/03/22 13:47:14 [trace] [system.db.ar.CActiveRecord] Transport.count()
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `transport_flow` `t` WHERE transport_flow_supervisor_id=:id and status=:status
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:47:14 [trace] [system.db.ar.CActiveRecord] TransportFlowSupervisor.find()
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow_supervisor` `t` WHERE pin=:pin LIMIT 1
+2015/03/22 13:47:14 [trace] [system.db.ar.CActiveRecord] Transport.count()
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `transport_flow` `t` WHERE transport_flow_supervisor_id=:id and status=:status
+2015/03/22 13:47:14 [trace] [system.db.ar.CActiveRecord] TransportFlowSupervisor.find()
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow_supervisor` `t` WHERE pin=:pin LIMIT 1
+2015/03/22 13:47:14 [trace] [system.db.ar.CActiveRecord] Transport.count()
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `transport_flow` `t` WHERE (transport_flow_supervisor_id=:ycp0) AND (status=:ycp1)
+2015/03/22 13:47:14 [trace] [system.db.ar.CActiveRecord] Transport.findAll()
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow` `t` WHERE (transport_flow_supervisor_id=:ycp0) AND (status=:ycp1) ORDER BY id desc LIMIT 10
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:47:14 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:47:14 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:47:14 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:47:14 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=312)
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "coreMessages" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "errorHandler" application component
+2015/03/22 13:47:14 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=312)
+2015/03/22 13:47:14 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:47:14 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:47:14 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:47:14 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:47:14 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=312)
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "coreMessages" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "errorHandler" application component
+2015/03/22 13:47:14 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:47:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=312)
+2015/03/22 13:47:14 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:47:15 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:47:14 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:47:14 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:47:15 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:47:15 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:47:15 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:47:15 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:47:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:47:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:47:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:47:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:47:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=312)
+2015/03/22 13:47:15 [trace] [system.CModule] Loading "coreMessages" application component
+2015/03/22 13:47:15 [trace] [system.CModule] Loading "errorHandler" application component
+2015/03/22 13:47:15 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:47:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=312)
+2015/03/22 13:47:15 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/03/22 13:47:15 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:47:15 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:47:15 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:47:15 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:47:15 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:47:15 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:47:15 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:47:15 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:47:15 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:47:15 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:47:15 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:47:15 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:47:15 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:47:15 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:47:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:47:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:47:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:47:15 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:47:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=312)
+2015/03/22 13:47:15 [trace] [system.CModule] Loading "coreMessages" application component
+2015/03/22 13:47:15 [trace] [system.CModule] Loading "errorHandler" application component
+2015/03/22 13:47:15 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:47:15 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=312)
+2015/03/22 13:47:15 [trace] [system.web.filters.CFilterChain] Running filter SiteController.filteraccessControl()
+2015/03/22 13:47:15 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:47:15 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:47:15 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:47:16 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:47:18 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:47:18 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:47:18 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:47:18 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:47:18 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:47:18 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:47:18 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:47:18 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:47:18 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:47:18 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:47:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:47:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:47:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:47:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:47:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=312)
+2015/03/22 13:47:18 [trace] [system.web.filters.CFilterChain] Running filter TransportController.filteraccessControl()
+2015/03/22 13:47:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `transport_flow`
+2015/03/22 13:47:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `transport_flow`
+2015/03/22 13:47:18 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:47:18 [trace] [system.db.ar.CActiveRecord] TransportFlowSupervisor.find()
+2015/03/22 13:47:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `transport_flow_supervisor`
+2015/03/22 13:47:18 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `transport_flow_supervisor`
+2015/03/22 13:47:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow_supervisor` `t` WHERE pin=:pin LIMIT 1
+2015/03/22 13:47:18 [trace] [system.db.ar.CActiveRecord] Transport.count()
+2015/03/22 13:47:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `transport_flow` `t` WHERE transport_flow_supervisor_id=:id and status=:status
+2015/03/22 13:47:18 [trace] [system.db.ar.CActiveRecord] TransportFlowSupervisor.find()
+2015/03/22 13:47:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow_supervisor` `t` WHERE pin=:pin LIMIT 1
+2015/03/22 13:47:18 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:47:18 [trace] [system.db.ar.CActiveRecord] TransportFlowSupervisor.find()
+2015/03/22 13:47:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow_supervisor` `t` WHERE pin=:pin LIMIT 1
+2015/03/22 13:47:18 [trace] [system.db.ar.CActiveRecord] TransportFlowSupervisor.findAll()
+2015/03/22 13:47:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT name, id FROM `transport_flow_supervisor` `t` ORDER BY name ASC
+2015/03/22 13:47:18 [trace] [system.db.ar.CActiveRecord] TransportFlowSupervisor.findAll()
+2015/03/22 13:47:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT id, name FROM `transport_flow_supervisor` `t` WHERE dept=:dept ORDER BY name ASC
+2015/03/22 13:47:18 [trace] [system.db.ar.CActiveRecord] TransportFlowSupervisor.findAll()
+2015/03/22 13:47:18 [trace] [system.db.CDbCommand] Querying SQL: SELECT name, id FROM `transport_flow_supervisor` `t` WHERE special=1 ORDER BY name ASC
+2015/03/22 13:47:18 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:47:18 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:48:14 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:48:14 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:48:14 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:48:14 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:48:14 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:48:14 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:48:14 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:48:14 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:48:14 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:48:14 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:48:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:48:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:48:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:48:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:48:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=118)
+2015/03/22 13:48:14 [trace] [system.web.filters.CFilterChain] Running filter TransportController.filteraccessControl()
+2015/03/22 13:48:14 [trace] [system.db.ar.CActiveRecord] Transport.findByPk()
+2015/03/22 13:48:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `transport_flow`
+2015/03/22 13:48:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `transport_flow`
+2015/03/22 13:48:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow` `t` WHERE `t`.`id`=502 LIMIT 1
+2015/03/22 13:48:14 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:48:14 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:48:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `transport_flow_supervisor`
+2015/03/22 13:48:14 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `transport_flow_supervisor`
+2015/03/22 13:48:14 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:48:14 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:48:14 [trace] [system.CModule] Loading "coreMessages" application component
+2015/03/22 13:48:14 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:48:14 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:48:14 [trace] [system.CModule] Loading "format" application component
+2015/03/22 13:48:49 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:48:49 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:48:49 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:48:49 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:48:49 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:48:49 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:48:49 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:48:49 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:48:49 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:48:49 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=312)
+2015/03/22 13:48:49 [trace] [system.web.filters.CFilterChain] Running filter TransportController.filteraccessControl()
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `transport_flow`
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `transport_flow`
+2015/03/22 13:48:49 [trace] [system.db.ar.CActiveRecord] TransportFlowSupervisor.find()
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `transport_flow_supervisor`
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `transport_flow_supervisor`
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow_supervisor` `t` WHERE pin=:pin LIMIT 1
+2015/03/22 13:48:49 [trace] [system.db.ar.CActiveRecord] User.findAll()
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (id =  312)
+2015/03/22 13:48:49 [trace] [system.db.ar.CActiveRecord] TransportFlowSupervisor.findAll()
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow_supervisor` `t` WHERE pin =  154504
+2015/03/22 13:48:49 [trace] [system.db.ar.CActiveRecord] Transport.insert()
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Executing SQL: INSERT INTO `transport_flow` (`travel_type`, `travel_in_out`, `start_date`, `bill_dept`, `pin`, `passanger`, `vehicle_type`, `return_date`, `start_point`, `end_point`, `travel_reason`, `user_name`, `level`, `transport_flow_supervisor_id`, `create_time`, `status`, `code`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, NOW(), :yp14, :yp15)
+2015/03/22 13:48:49 [trace] [system.db.ar.CActiveRecord] TransportFlowSupervisor.find()
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow_supervisor` `t` WHERE id=:id LIMIT 1
+2015/03/22 13:48:49 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Executing SQL: insert into tbl_requisitions (bpmt_ref_no,vehicletype_id, user_pin,user_name,user_level,dept_name,email,user_cell,user_address,start_point,end_point,start_date,end_date,start_time,end_time,passenger,supervisor_name,supervisor_pin,approve_status,remarks,dutytype_id) values (:bpmt_ref_no, :vehicletype_id, :user_pin, :user_name, :user_level, :dept_name, :email,  :user_cell, :user_address, :start_point, :end_point, :start_date, :end_date, :start_time,:end_time, :passenger, :supervisor_name, :supervisor_pin, :approve_status, :remarks, :dutytype_id)
+2015/03/22 13:48:49 [trace] [system.CModule] Loading "log" application component
+2015/03/22 13:48:49 [trace] [system.CModule] Loading "request" application component
+2015/03/22 13:48:49 [trace] [system.CModule] Loading "urlManager" application component
+2015/03/22 13:48:49 [trace] [system.base.CModule] Loading "fleet" module
+2015/03/22 13:48:49 [trace] [system.CModule] Loading "user" application component
+2015/03/22 13:48:49 [trace] [system.CModule] Loading "session" application component
+2015/03/22 13:48:49 [trace] [system.db.ar.CActiveRecord] User.findByPk()
+2015/03/22 13:48:49 [trace] [system.base.CModule] Loading "user" module
+2015/03/22 13:48:49 [trace] [system.CModule] Loading "db" application component
+2015/03/22 13:48:49 [trace] [system.db.CDbConnection] Opening DB connection
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_users`
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_users`
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_profiles`
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_profiles`
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT `user`.`id` AS `t0_c0`, `user`.`username` AS `t0_c1`, `user`.`password` AS `t0_c2`, `user`.`email` AS `t0_c3`, `user`.`create_at` AS `t0_c5`, `user`.`lastvisit_at` AS `t0_c6`, `user`.`superuser` AS `t0_c7`, `user`.`status` AS `t0_c8`, `profile`.`user_id` AS `t1_c0`, `profile`.`lastname` AS `t1_c1`, `profile`.`firstname` AS `t1_c2` FROM `tbl_users` `user`  LEFT OUTER JOIN `tbl_profiles` `profile` ON (`profile`.`user_id`=`user`.`id`)  WHERE (`user`.`id`=312)
+2015/03/22 13:48:49 [trace] [system.web.filters.CFilterChain] Running filter TransportController.filteraccessControl()
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `transport_flow`
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `transport_flow`
+2015/03/22 13:48:49 [trace] [system.db.ar.CActiveRecord] Transport.count()
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `transport_flow` `t` WHERE t.pin=:ycp0
+2015/03/22 13:48:49 [trace] [system.db.ar.CActiveRecord] Transport.findAll()
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow` `t` WHERE t.pin=:ycp0 ORDER BY t.id desc LIMIT 10
+2015/03/22 13:48:49 [trace] [system.CModule] Loading "themeManager" application component
+2015/03/22 13:48:49 [trace] [system.db.ar.CActiveRecord] TransportFlowSupervisor.find()
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `transport_flow_supervisor`
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `transport_flow_supervisor`
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow_supervisor` `t` WHERE pin=:pin LIMIT 1
+2015/03/22 13:48:49 [trace] [system.db.ar.CActiveRecord] Transport.count()
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `transport_flow` `t` WHERE transport_flow_supervisor_id=:id and status=:status
+2015/03/22 13:48:49 [trace] [system.db.ar.CActiveRecord] TransportFlowSupervisor.find()
+2015/03/22 13:48:49 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow_supervisor` `t` WHERE pin=:pin LIMIT 1
+2015/03/22 13:48:49 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/03/22 13:48:50 [trace] [system.db.ar.CActiveRecord] Transport.count()
+2015/03/22 13:48:50 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM `transport_flow` `t` WHERE t.pin=:ycp1
+2015/03/22 13:48:50 [trace] [system.db.ar.CActiveRecord] Transport.findAll()
+2015/03/22 13:48:50 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `transport_flow` `t` WHERE t.pin=:ycp1 ORDER BY t.id desc LIMIT 10
+2015/03/22 13:48:50 [trace] [system.CModule] Loading "assetManager" application component
+2015/03/22 13:48:50 [trace] [system.CModule] Loading "clientScript" application component
+2015/03/22 13:48:50 [trace] [system.CModule] Loading "coreMessages" application component
+2015/03/22 13:48:50 [trace] [system.CModule] Loading "format" application component
+2015/03/22 13:48:50 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:48:50 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:48:50 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:48:50 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:48:50 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:48:50 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:48:50 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:48:50 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:48:50 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:48:50 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:48:50 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:48:50 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:48:50 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:48:50 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:48:50 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:48:50 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:48:50 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:48:50 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)
+2015/03/22 13:48:50 [trace] [system.db.ar.CActiveRecord] lazy loading Transport.transportflowsupervisor
+2015/03/22 13:48:50 [trace] [system.db.CDbCommand] Querying SQL: SELECT `transportflowsupervisor`.`id` AS `t1_c0`, `transportflowsupervisor`.`pin` AS `t1_c1`, `transportflowsupervisor`.`name` AS `t1_c2`, `transportflowsupervisor`.`designation` AS `t1_c3`, `transportflowsupervisor`.`dept` AS `t1_c4`, `transportflowsupervisor`.`status` AS `t1_c5`, `transportflowsupervisor`.`special` AS `t1_c6` FROM `transport_flow_supervisor` `transportflowsupervisor`  WHERE (`transportflowsupervisor`.`id`=:ypl0)

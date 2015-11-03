@@ -1,0 +1,67 @@
+<?php
+$this->layout = "//layout/main";
+?>
+<i class="top-close-button close red icon" style="top: 1em; right: 1em"></i>
+<div class="ui header" style="padding: 0.5rem 1rem; font-size: 1.4em">
+    Share group to this member
+</div>
+<div class="content" style="background: #eee; padding: 0.5em; padding-bottom: 0">
+    <?php    
+    $this->renderPartial('_form', array('model' => $model));
+    ?>
+</div>
+<div class="actions" style="padding: 0.5rem">
+    <div class="ui button close small green labeled icon" id="save">
+        <i class="save circle icon"></i>
+        Save
+    </div>
+    <div class="ui button close small red labeled icon">
+        <i class="remove circle icon"></i>
+        Close
+    </div>
+</div>
+<script type="text/javascript">
+
+ $(function () {
+        $('#save').on('click', function (e) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            
+                $.ajax({
+                    url: "/sms/groupShare/create",
+                    type: "POST",
+                    data: $('#sms-group-share-form').serializeArray(),
+                    success: function (data) {
+                        if (console)
+                            console.log(data);
+                        
+                        
+                            $('.view.ui.modal').modal('hide');
+                        //    jQuery('#sms-group-grid').yiiGridView('update');                        
+                    }
+                
+            });
+            return false;
+            
+        });
+          $('#GroupShare_user_id').on('blur', function (e) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            //$('#loading').show();
+            $.ajax({
+                async: false,
+                dataType: 'json',
+                /*url: $(e.target).attr('href'),*/
+                url: 'userinfo?pin=' + $(this).val(),
+                success: function (data) {
+                    $('#user_name').val(data['Fname'] + ' ' + data['Mname'] + ' ' + data['Lname']);                    
+                    //$('#loading').hide();
+                }
+            });
+            return false;
+        });
+});
+                
+        
+            </script>
+        

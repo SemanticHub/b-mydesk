@@ -1,0 +1,103 @@
+<div class="modal-sm">  
+<?php
+$this->layout = "//layouts/column2_sms";
+$this->renderPartial('//sms/default/_menu', array('active' => 'sms'));
+?>
+<h3 class="ui header dividing" style="margin-top: 0">SMS Group  <?php echo $model->name; ?></h3>
+<?php
+$this->widget('zii.widgets.CDetailView', array(
+    'data' => $model,
+    'htmlOptions' => array('class' => 'ui table segment view-table'),
+    'attributes' => array(        
+        'name',
+        'description',                
+        'department',
+        array(
+            'name' => 'create_by',
+            'type' => 'raw',
+            'value' => User::model()->findByPk($model->create_by)->username,
+        ),
+        'create_time',
+    ),
+));
+?>
+<br />
+
+<a id="view-member" class="ui label" style="white-space: nowrap" href="/sms/smsgroupmember/create?group_id=<?php echo $_REQUEST['id']; ?>"><i class="add icon"></i>Add Group Member</a>
+<a id="share" class="ui label" style="white-space: nowrap" href="/sms/groupShare/create?id=<?php echo $_REQUEST['id']; ?>"><i class="add icon"></i>Share this Group</a>
+<?php
+$this->widget('zii.widgets.grid.CGridView', array(
+    'id' => 'sms-group-members-grid',
+    'dataProvider' => $dataProvider,
+    'itemsCssClass' => 'ui basic table segment',
+    //'filter' => SmsGroupMembers::model(),
+    'columns' => array(
+        //'id',
+        //'group_id',
+        //'member_id',
+        'member_pin',
+        'member_phone',
+        'member_name',
+        array(
+            'class' => 'CButtonColumn',
+            'template' => '{update}{delete}',
+            'viewButtonUrl'=>'Yii::app()->createUrl("/sms/smsgroupmember/view", array("id" => $data->id, "gid" => $data->group_id))',
+            'deleteButtonUrl'=>'Yii::app()->createUrl("/sms/smsgroupmember/delete", array("id" => $data->id))',
+            'updateButtonUrl'=>'Yii::app()->createUrl("/sms/smsgroupmember/update", array("id" => $data->id, "gid" => $data->group_id))',
+        ),
+    ),
+));
+?>
+<div id="view-modal" class="view ui modal " style="background: #eee; width: auto">Loading...</div>
+<script type="text/javascript">
+    $(function () {
+        $('#view-member').on('click', function (e) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            $('#loading').show();
+            $.ajax({
+                async: false,
+                url: $(e.target).attr('href'),
+                success: function (data) {
+                    if ($('#view-modal')) {
+                        $('#view-modal').html(data);
+                        $('#view-modal').modal();                        
+                        $('#view-modal').modal('hide', function(){$('#view-modal').empty()});
+                        $('#view-modal').modal('setting', 'transition', "vertical flip");
+                        $('#view-modal').modal('attach events', '.top-close-button', 'hide');                        
+                        $('#view-modal').modal('show');                        
+                        $('#loading').hide();
+                    }
+                }
+            });
+            return false;
+        });
+    });
+</script>
+<div id="share-modal" class="view ui modal " style="background: #eee; width: auto">Loading...</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#share').on('click', function (e) {
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            $('#loading').show();
+            $.ajax({
+                async: false,
+                url: $(e.target).attr('href'),
+                success: function (data) {
+                    if ($('#share-modal')) {
+                        $('#share-modal').html(data);
+                        $('#share-modal').modal();                        
+                        $('#share-modal').modal('hide', function(){$('#share-modal').empty()});
+                        $('#share-modal').modal('setting', 'transition', "vertical flip");
+                        $('#share-modal').modal('attach events', '.top-close-button', 'hide');                        
+                        $('#share-modal').modal('show');                        
+                        $('#loading').hide();
+                    }
+                }
+            });
+            return false;
+        });
+    });
+</script>

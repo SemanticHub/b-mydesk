@@ -1,0 +1,130 @@
+<?php
+$form = $this->beginWidget('CActiveForm', array(
+    'id' => 'cases-form',
+    'enableAjaxValidation' => false,
+    'htmlOptions' => array('class' => 'ui form')
+        ));
+$groups = CHtml::listData(Groups::model()->findAll(), 'id', 'name');
+
+?>
+<style type="text/css">
+    .ui.selection, .ui.selection .menu {
+        padding: .4em .5em; border: 1px solid #aaa; box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05) !important;background: #fff;
+    }
+    .required {
+        color: #ff0000; font-weight: bold; font-size: 2em; line-height: 13px; vertical-align: text-bottom;
+    }    
+    form.ui.form div.ui.fluid.form.segment div.ui.five.fields div.field label{ font-size: .80em}
+    form .ui.grid > .column { margin: 0
+    }
+    .sms-groups, .sms-groups span {
+        display: block; list-style: none; margin: 0; padding: 0
+    }      
+    .sms-groups li {
+        display: inline-block; width: 20%
+    }
+    .ui.form .field ul.sms-groups li input { margin-top: 3px }
+    .ui.form .field ul.sms-groups li label { white-space: nowrap }
+</style>
+<div class="ui fluid form segment" style="background: rgba(0, 0, 0 , 0.1); margin-top: 0">
+
+    <?php echo $form->errorSummary($model); ?>
+    <div class="ui grid com-form">
+        <div class="four wide column">
+            <div class="field">
+                <?php echo $form->labelEx($model, 'caller_name'); ?>
+                <div class="ui mini input">
+                    <?php echo $form->textField($model, 'caller_name', array('size' => 60, 'maxlength' => 127)); ?>
+                    <?php echo $form->error($model, 'caller_name'); ?>
+                </div>
+            </div>            
+        </div>
+        <div class="four wide column">
+            <div class="field">
+                <?php echo $form->labelEx($model, 'caller_mobile'); ?>
+                <div class="ui mini input">
+                    <?php echo $form->textField($model, 'caller_mobile', array('size' => 60, 'maxlength' => 127)); ?>
+                    <?php echo $form->error($model, 'caller_mobile'); ?>
+                </div>
+            </div>
+        </div>
+        <div class="four wide column">
+            <div class="field">
+                <?php echo $form->labelEx($model, 'caller_address'); ?>
+                <div class="ui mini input">
+                    <?php echo $form->textField($model, 'caller_address', array('size' => 60, 'maxlength' => 256)); ?>
+                    <?php echo $form->error($model, 'caller_address'); ?>
+                </div>
+            </div>
+        </div>
+        <div class="four wide column">
+            <div class="field">
+                <?php echo $form->labelEx($model, 'is_caller_victim'); ?>
+                <div class="ui mini input">
+                    <?php echo $form->checkBox($model, 'is_caller_victim'); ?>
+                    <?php echo $form->error($model, 'is_caller_victim'); ?>
+                </div>
+            </div>
+        </div>
+        <div class="four wide column">
+            <div class="field">
+                <?php echo $form->labelEx($model, 'violance_type'); ?>
+                <div class="ui mini input">
+                    <?php echo $form->dropDownList($model, 'violance_type', $violanceTypes, array('class' => 'ui mini selection ')); ?>
+                    <?php echo $form->error($model, 'violance_type'); ?>
+                </div>
+            </div>
+        </div>
+        <div class="eight wide column">
+            <div class="field">
+                <?php echo $form->labelEx($model, 'case_summary'); ?>
+                <div class="ui mini input">
+                    <?php echo $form->textField($model, 'case_summary', array('size' => 60, 'maxlength' => 127)); ?>
+                    <?php echo $form->error($model, 'case_summary'); ?>
+                </div>
+            </div>
+        </div>
+        <div class="four wide column">
+            <div class="field">
+                <?php echo $form->labelEx($model, 'victim_current_condition'); ?>
+                <div class="ui mini input">
+                    <?php echo $form->dropDownList($model, 'victim_current_condition', $victimCondition, array('class' => 'ui mini selection ')); ?>
+                    <?php echo $form->error($model, 'victim_current_condition'); ?>
+                </div>
+            </div>
+        </div>
+
+        <div class="sixteen wide column">
+            <div class="field">
+                <?php echo $form->labelEx($model, 'case_details'); ?>
+                <div class="ui mini input">
+                    <?php echo $form->textArea($model, 'case_details', array('rows' => 2, 'cols' => 50, 'style' => 'height:auto')); ?>
+                    <?php echo $form->error($model, 'case_details'); ?>
+                </div>
+            </div>    
+        </div>
+        <div class="sixteen wide column">
+            <div class="field">
+                <fieldset>
+                    <legend><label>SMS Groups</label></legend>
+                    <ul class="sms-groups">
+                        <?php
+                        echo CHtml::checkBoxList('groups', '', $groups, array('template' => '<li>{input}{label}</li>', 'container' => '', 'separator' => ''));
+                        ?>
+                    </ul>
+                </fieldset>                
+            </div>    
+        </div>        
+        <div class="sixteen wide column" style="margin-bottom: 0">
+            <div class="field" style="margin-bottom: 0">
+                <div class="field buttons" style="margin-bottom: 0">
+                    <div class="ui small submit teal labeled icon button">
+                        <i class="right arfield icon"></i>
+                        Save
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php $this->endWidget(); ?>

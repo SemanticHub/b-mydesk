@@ -1,0 +1,514 @@
+<?php
+
+class TransportController extends Controller
+{
+    public $layout = '//layouts/column2';
+
+    public $defaultAction = 'index';
+
+    public $travel_type = Array(
+        '0' => 'Official',
+        '1' => 'Personal',
+    );
+
+    public $outside_dhaka = Array(
+        '0' => 'No',
+        '1' => 'Yes',
+    );
+
+    public $status = array();
+    public $vehicleType = array();
+
+    /**
+     * @return array action filters
+     */
+    public function filters()
+    {
+        return array(
+            // 'rights',
+            'accessControl', // perform access control for CRUD operations
+            'postOnly + delete', // we only allow deletion via POST request
+        );
+    }
+
+    /**
+     * Specifies the access control rules.
+     * This method is used by the 'accessControl' filter.
+     * @return array access control rules
+     */
+    public function accessRules()
+    {
+        return array(
+           array('allow',
+                'actions' => array('approve', 'decline','confirm'),
+                'users' => array('*'),
+            ),
+            /*array('allow', // allow authenticated user to perform 'create' and 'update' actions
+                'actions' => array('create', 'update', 'index'),
+                'users' => array('@'),
+            ),*/
+            array('allow', // allow admin user to perform 'admin' and 'delete' actions
+                'actions' => array('user', 'delete', 'updateAjax1', 'updateAjax2','supervisor','index', 'create', 'view'),
+                //'users'=>array('admin'),
+                'users' => array('@'),
+            ),
+            array('deny', // deny all users
+                'users' => array('*'),
+            ),
+        );
+    }
+
+    /**
+     * Displays a particular model.
+     * @param integer $id the ID of the model to be displayed
+     */
+    public function actionView($id)
+    {
+        $this->render('view', array(
+            'model' => $this->loadModel($id),
+        ));
+    }
+
+    public function actionGetRequesterInfo($pin) {
+        $hrData = new HrdService;
+        $data = $hrData->getHrUser($pin);
+        CVarDumper::dump($data, 10, true);
+    }
+
+    /**
+     * Creates a new model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     */
+    public function actionCreate()
+    {
+        $model = new Transport;
+        $model->travel_type = 0; // 0 => official, 1=> personal
+        $model->travel_in_out = 0; // 0 => no, 1=>yes
+        $model->start_date = date("Y-m-d h:m:s");
+        $model->start_point="BRAC Head Office";
+        $model->travel_reason = "Official";
+        $hrdata = new HrdService;
+        $model1 = $hrdata->getHrUser(Yii::app()->user->name);
+        $vehicle_type = Yii::app()->getModule('fleet')->vehicleType;
+
+        if (isset($_POST['Transport'])) {
+            $model->attributes = $_POST['Transport'];
+            $get_type = $_POST['Transport']['travel_type'];
+            $outside_dhaka =  $_POST['Transport']['travel_in_out'];
+
+
+            /*CVarDumper::dump($model, 10, true);
+            CVarDumper::dump($model1, 10, true);
+            Yii::app()->end();*/
+
+            if(!empty($model->onbehalf_pin)) {
+                $temp = $model->pin;
+                $model->pin = $model->onbehalf_pin;
+                $model->onbehalf_pin = $temp;
+            }
+
+            if(intval($model1[0]['Level']) >= 18 ) {
+                $model->status = 3;        // approved
+            } else {
+                if($get_type == 0){         // official
+                    $model->status = 2;     // pending
+                } else {                    // personal
+                    if($outside_dhaka == 0) {
+                        $model->status = 1;  // self
+                    } else {
+                        $model->status = 4;  // pms
+                    }
+                }
+            }
+
+            /*if ($get_type == 0){
+                $model->status = 2;
+            } elseif ($get_type == 1 and $outside_dhaka == 0) {
+                $model->status = 1;
+            } elseif($get_type == 1 and $outside_dhaka == 1){
+                $model->status = 4;
+                $supervisor = TransportFlowSupervisor::model()->find(array('condition' => 'special=:special', 'params' => array(':special' => 1)));
+                //$model->transport_flow_supervisor_id = 2;
+                $model->transport_flow_supervisor_id = $supervisor['id'];
+                $model2 = $hrdata->getHrUser($supervisor['pin']);
+                $rec_mail = $model2[0]['Email'];
+            }*/
+
+            //
+            /*if(!empty($_POST['Transport']['transport_flow_supervisor_id'])){
+                $get_supervisor_id = $_POST['Transport']['transport_flow_supervisor_id'];
+                $get_supervisor_pin = TransportFlowSupervisor::model()->findAll(array("condition"=>"id =  $get_supervisor_id"));
+                $model2 = $hrdata->getHrUser($get_supervisor_pin[0]['pin']);
+            }*/
+
+            $model->code = sha1(mt_rand(10000, 99999) . time() . $model1[0]['Email'] . $model->pin);
+
+            if ($model->save()) {
+                if(!empty($model2[0]['Email']))
+                {
+                    $rec_mail = $model2[0]['Email'];
+                    $this->sendMailIcress($model,$rec_mail);
+
+                }
+                Yii::app()->user->setFlash('green', 'A new transport requisition is submitted');
+                $this->redirect("user");
+            }
+        }
+
+
+
+
+        $this->render('create', array(
+            'model' => $model,
+            'model1' => $model1,
+            'travel_type' => $this->travel_type,
+            'outside_dhaka' => $this->outside_dhaka,
+            'vehicle_type' => $vehicle_type
+        ));
+    }
+
+    /**
+     * Updates a particular model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id the ID of the model to be updated
+     */
+    public function actionUpdate($id)
+    {
+        $model = $this->loadModel($id);
+
+        if (isset($_POST['Transport'])) {
+
+//            Yii::app()->getModule('fleet')->status;
+
+            $model->attributes = $_POST['Transport'];
+            if ($model->save())
+                $this->redirect(array('view', 'id' => $model->id));
+        }
+        $hrdata = new HrdService;
+        $model1 = $hrdata->getHrUser(Yii::app()->user->name);
+
+        $this->render('update', array(
+            'model' => $model,
+            'model1' => $model1,
+            'travel_type' => $this->travel_type,
+            'outside_dhaka' => $this->outside_dhaka,
+        ));
+    }
+
+    public function actionUpdateAjax1($id)
+    {
+     //   $supervisor = TransportFlowSupervisor::model()->find(array('condition' => 'pin=:pin', 'params' => array(':pin' => Yii::app()->user->name)));
+     //   $supervisor_id = $supervisor['id'];
+        $model = $this->loadModel($id);
+       // $model->attributes = $_POST['Transport'];
+        $model->status = 3;
+
+        $hrdata = new HrdService;
+        $model1 = $hrdata->getHrUser($model->pin);
+        $rec_mail = $model1[0]['Email'];
+
+        $model->save();
+        $this->sendMailIcress($model,$rec_mail);
+        Yii::app()->user->setFlash('success', "Requisition is approved!");
+        $this->redirect('supervisor');
+    }
+
+    public function actionUpdateAjax2($id)
+    {
+        $model = $this->loadModel($id);
+        //$model->attributes = $_POST['Transport'];
+        $model->status = 5;
+
+        $hrdata = new HrdService;
+        $model1 = $hrdata->getHrUser($model->pin);
+        $rec_mail = $model1[0]['Email'];
+
+        $model->save();
+        $this->sendMailIcress($model,$rec_mail);
+        Yii::app()->user->setFlash('error', "Requisition is not approved!");
+        $this->redirect('supervisor');
+    }
+
+    /**
+     * Deletes a particular model.
+     * If deletion is successful, the browser will be redirected to the 'admin' page.
+     * @param integer $id the ID of the model to be deleted
+     */
+    public function actionDelete($id)
+    {
+        $this->loadModel($id)->delete();
+
+        // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+        if (!isset($_GET['ajax']))
+            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+    }
+
+    /**
+     * Lists all models.
+     */
+    public function actionIndex()
+    {
+        if(TransportFlowSupervisor::model()->isSupervisor()) {
+            $this->redirect("fleet/transport/supervisor");
+        } else {
+            $this->redirect("fleet/transport/user");
+        }
+    }
+
+    /**
+     * Manages all models.
+     */
+    public function actionUser()
+    {
+        $model = new Transport('search');
+        $model->unsetAttributes();
+        if (isset($_GET['Transport']))
+            $model->attributes = $_GET['Transport'];
+        $data = $model->search()->itemCount;
+
+        $this->render('user', array(
+            'model' => $model,
+            'count' => $data
+        ));
+
+
+    }
+
+    public function actionSupervisor()
+    {
+        // Condition for PEMS Director
+
+        $supervisor = TransportFlowSupervisor::model()->find(array('condition' => 'pin=:pin and special=:special', 'params' => array(':pin' => Yii::app()->user->name, 'special' => 1)));
+
+        if(Yii::app()->user->username == $supervisor['pin']){
+            $supervisor_id = $supervisor['id'];
+            $model = new Transport('pemsearch');
+            $model->unsetAttributes();
+
+            $data = $model->pemsearch($supervisor_id)->itemCount;
+
+            Yii::app()->user->setFlash('warning', " " . $data . " requisitions pending for approval");
+
+            $this->render('pems', array(
+                'model' => $model,
+                'supervisor_id' => $supervisor_id,
+                'count' => $data
+            ));
+        }
+
+        // Condition for All Supervisor except PEMS Director
+        else{
+        $supervisor = TransportFlowSupervisor::model()->find(array('condition' => 'pin=:pin', 'params' => array(':pin' => Yii::app()->user->name)));
+        $supervisor_id = $supervisor['id'];
+        $model = new Transport('adminsearch');
+        $model->unsetAttributes();
+
+        //$data = $model->adminsearch($supervisor_id)->itemCount;
+        $data = Transport::model()->Count(array('condition' => 'transport_flow_supervisor_id=:id and status=:status', 'params' => array(':id' => $supervisor_id, ':status'=>'2')));
+
+        Yii::app()->user->setFlash('warning', " " . $data . " requisitions pending for approval");
+
+        $this->render('admin', array(
+            'model' => $model,
+            'supervisor_id' => $supervisor_id,
+            'count' => $data
+        ));
+        }
+
+    }
+
+    public function sendMailIcress($model,$rec_mail)
+    {
+        try{
+            $soapClient = new SoapClient("http://172.25.100.41:8080/isoap.comm.imail/EmailWS?wsdl"
+
+            );
+
+            $job = new jobs;
+
+            //$job->subject='Transport Requisition Notification';
+            $job->jobContentType='html';
+            $job->fromAddress='mydesk@brac.net';
+            $job->udValue1='myDesk';
+            $job->requester='myDesk';
+
+            $job->jobRecipients[0]=new jobRecipients;
+            $job->jobRecipients[0]->recipientEmail="shouman.das@gmail.com";
+            $job->jobRecipients[1]=new jobRecipients;
+            $job->jobRecipients[1]->recipientEmail=$rec_mail;
+
+            $hrdata = new HrdService;
+            $model1 = $hrdata->getHrUser($model->pin);
+            //$rec_mail = $model1[0]['Email'];
+
+           if($model->status == '2'){
+            $job->subject='Transport Requisition awaiting approval';
+            $job->body = $this->renderPartial('_email_requisition_pending', array('model'=>$model,'model1'=>$model1,'rec_mail'=>$rec_mail), true);
+            }
+           elseif($model->status == '3'){
+                $job->subject='Your Transport Request Approved';
+                $job->body = $this->renderPartial('_email_requisition_approved', array('model'=>$model), true);
+            }
+           elseif($model->status == '4'){
+               $job->subject='Transport Requisition awaiting approval';
+               $job->body = $this->renderPartial('_email_requisition_pending', array('model'=>$model,'model1'=>$model1,'rec_mail'=>$rec_mail), true);
+           }
+           elseif($model->status == '5'){
+               $job->subject='Your Transport Request Declined';
+               $job->body = $this->renderPartial('_email_requisition_declined', array('model'=>$model), true);
+            }
+
+            $jobs = array('jobs'=>$job);
+            $send_email =$soapClient->__call('sendEmail',array($jobs));
+
+
+        }
+        catch (SoapFault $fault) {
+            $error = 1;
+            print($fault->faultcode."-".$fault->faultstring);
+        }
+    }
+
+/*    public function generateCode($email, $pin) {
+        return sha1(mt_rand(10000, 99999) . time() . $email . $pin);
+    }*/
+
+    /**
+     * Returns the data model based on the primary key given in the GET variable.
+     * If the data model is not found, an HTTP exception will be raised.
+     * @param integer $id the ID of the model to be loaded
+     * @return Transport the loaded model
+     * @throws CHttpException
+     */
+    public function loadModel($id)
+    {
+        $model = Transport::model()->findByPk($id);
+        if ($model === null)
+            throw new CHttpException(404, 'The requested page does not exist.');
+        return $model;
+    }
+
+    /**
+     * Performs the AJAX validation.
+     * @param Transport $model the model to be validated
+     */
+    protected function performAjaxValidation($model)
+    {
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'transport-form') {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+        }
+    }
+
+    public function actionApprove(){
+        $key = Yii::app()->request->getParam('key');
+        $email = Yii::app()->request->getParam('email');
+        $id = Yii::app()->request->getParam('id');
+
+        $model = User::model()->findByAttributes(array('email' => $email));
+        if ($model === null) {
+            throw new CHttpException(503, 'The requested User does not exists in our system.');
+        }
+
+        $transport = Transport::model()->findAllByPk($id);
+
+
+        if(empty($transport[0]->code)) {
+            throw new CHttpException(503, 'Link already used');
+        } else if ($transport[0]->code !== $key) {
+            throw new CHttpException(503, 'Invalid activation code.');
+        } else if ($transport[0]->status == 3){
+            throw new CHttpException(503, 'Requisition already approved.');
+        } else {
+            $transport[0]->status = 3;
+            $transport[0]->code = "";
+            $transport[0]->update();
+            $this->sendMailIcress($transport[0],$email);
+            Yii::app()->user->setFlash('success', "Request Successfully Approved.");
+            $this->redirect(array('confirm'));
+        }
+    }
+
+    public function actionDecline(){
+        $key = Yii::app()->request->getParam('key');
+        $email = Yii::app()->request->getParam('email');
+        $id = Yii::app()->request->getParam('id');
+
+        $model = User::model()->findByAttributes(array('email' => $email));
+        if ($model === null) {
+            throw new CHttpException(503, 'The requested User does not exists in our system.');
+        }
+
+        $transport = Transport::model()->findAllByPk($id);
+
+        if(empty($transport[0]->code)) {
+            throw new CHttpException(503, 'Link already used');
+        } else if ($transport[0]->code !== $key) {
+            throw new CHttpException(503, 'Invalid activation code.');
+        } else if ($transport[0]->status == 5){
+            throw new CHttpException(503, 'Requisition already declined.');
+        } else {
+            $transport[0]->status = 5;
+            $transport[0]->code = "";
+            $transport[0]->update();
+            $this->sendMailIcress($transport[0],$email);
+            Yii::app()->user->setFlash('success', "Request Successfully Declined.");
+            $this->redirect(array('confirm'));
+    }
+    }
+
+    public function actionConfirm(){
+        //$this->layout='public';
+        $this->render('confirm');
+    }
+}
+
+
+class jobs {
+    public $appUserId; // string
+    public $attachments; // attachment
+    public $bcc; // string
+    public $body; // string
+    public $caption; // string
+    public $cc; // string
+    public $complete; // boolean
+    public $feedbackDate; // dateTime
+    public $feedbackEmail; // string
+    public $feedbackName; // string
+    public $feedbackSent; // boolean
+    public $fromAddress; // string
+    public $fromText; // string
+    public $gateway; // string
+    public $jobContentType; // string
+    public $jobId; // long
+    public $jobRecipients; // jobRecipients
+    public $mode; // string
+    public $numberOfItem; // int
+    public $numberOfItemFailed; // int
+    public $numberOfItemSent; // int
+    public $priority; // string
+    public $requester; // string
+    public $status; // string
+    public $subject; // string
+    public $toAddress; // string
+    public $toText; // string
+    public $udValue1; // string
+    public $udValue2; // string
+    public $udValue3; // string
+    public $udValue4; // string
+    public $udValue5; // string
+    public $udValue6; // string
+    public $udValue7; // string
+    public $vtemplate; // string
+}
+
+class jobRecipients {
+    public $failCount; // int
+    public $image; // base64Binary
+    public $job; // jobs
+    public $jobDetailId; // long
+    public $recipientEmail; // string
+    public $sent; // boolean
+    public $sentDate; // dateTime
+    public $toText; // string
+}

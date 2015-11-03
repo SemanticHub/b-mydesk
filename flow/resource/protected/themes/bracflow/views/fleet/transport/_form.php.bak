@@ -1,0 +1,406 @@
+
+<?php $form=$this->beginWidget('CActiveForm', array(
+    'id'=>'transport-form',
+    'enableAjaxValidation'=>false,
+    'htmlOptions' => array('class'=>'ui form')
+)); ?>
+<style>
+    .ui.selection.dropdown, .ui.selection.dropdown .menu {
+        padding: .3em 1em;
+    }
+    .ui-datepicker {
+        font-size: 13px;
+    }
+    .required {
+        color: #ff0000; font-weight: bold; font-size: 2em; line-height: 13px;
+    }
+    #request_type {
+        font-size: .8em;
+        text-transform: uppercase;
+        color: #666;
+    }
+</style>
+<div class="ui warning message" style="display: block; margin-top: 0">
+    <div class="ui header">
+        Requester
+            <?php //echo $form->labelEx($model,'travel_type'); ?>
+            <?php echo CHtml::radioButtonList('request_type','0', array('0'=>'Self', '1'=> 'On behalf of') ,array( 'template'=> '{input}{label}', 'separator'=>'','encode'=> false,'type'=>'text','class'=>'','placeholder'=>'Request Type')); ?>
+    </div>
+
+    <div class="ui form" style="display: none; margin-bottom: 0" id="request_type_options">
+        <div class="inline field">
+            <?php echo $form->labelEx($model,'onbehalf_pin');?>
+            <?php echo $form->textField($model,'onbehalf_pin',array('type'=>'text','placeholder'=>'Requester PIN')); ?>
+        </div>
+    </div>
+
+</div>
+<div class="ui fluid form segment" style="background: rgba(0, 0, 0 , 0.1)">
+    <input type="hidden" id="hrd-user-department-name" value="<?php echo $model1[0]['Project'] ?>">
+    <?php echo $form->errorSummary($model); ?>
+
+    <h3 class="ui black header dividing" style="margin-top: 0">Travel Information</h3>
+
+
+    <div class="inline field">
+        <?php  echo $form->hiddenField($model,'pin',array('value'=>$model1[0]['PIN'])); ?>
+    </div>
+
+    <div class="ui three fields">
+        <div class="field">
+            <?php echo $form->labelEx($model,'travel_type'); ?>
+                <?php echo $form->radioButtonList($model,'travel_type',$travel_type, array( 'template'=> '{input}{label}', 'separator'=>'','encode'=> false,'type'=>'text','class'=>'','placeholder'=>'Travel Type')); ?>
+        </div>
+        <div class="field">
+            <?php echo $form->labelEx($model,'travel_in_out');?>
+            <?php //echo $form->checkbox($model,'travel_in_out',$outside_dhaka, array( 'type'=>'text','class'=>'ui selection dropdown','placeholder'=>'Outside Dhaka?')); ?>
+            <?php echo $form->radioButtonList($model,'travel_in_out',$outside_dhaka, array( 'template'=> '{input}{label}', 'separator'=>'','encode'=> false,'type'=>'text','class'=>'','placeholder'=>'Travel Type')); ?>
+        </div>
+        <div class="field">
+            <?php echo $form->labelEx($model,'passanger');?>
+            <div class="ui mini input">
+            <?php echo $form->textField($model,'passanger',array('type'=>'text','placeholder'=>'passenger')); ?>
+                </div>
+        </div>
+    </div>
+    <div class="ui three fields">
+        <div class="field">
+            <?php echo $form->labelEx($model,'vehicle_type');?>
+            <?php //echo $form->textField($model,'vehicle_type',array('type'=>'text','placeholder'=>'Type of Vehicle')); ?>
+            <?php  echo $form->dropDownList($model,'vehicle_type',$vehicle_type, array( 'type'=>'text','class'=>'ui mini selection dropdown','placeholder'=>'Select')); ?>
+        </div>
+        <div class="field">
+            <?php echo $form->labelEx($model,'start_date'); ?>
+            <?php //echo $form->textField($model,'start_date'); ?>
+            <div class="ui mini input icon">
+            <?php
+            $this->widget(
+                'ext.jui.EJuiDateTimePicker',
+                array(
+                    'model'     => $model,
+                    'attribute' => 'start_date',
+                    //'language'=> 'ru',//default Yii::app()->language
+                    //'mode'    => 'datetime',//'datetime' or 'time' ('datetime' default)
+                    'options'   => array(
+                        'dateFormat' => 'yy-mm-dd',
+
+                        //'timeFormat' => '',//'hh:mm tt' default
+                    ),
+                )
+            );
+            ?>
+                <i class="calendar icon"></i>
+                </div>
+        </div>
+        <div class="field">
+            <?php echo $form->labelEx($model,'return_date'); ?>
+            <div class="ui mini input icon">
+            <?php
+            $this->widget(
+                'ext.jui.EJuiDateTimePicker',
+                array(
+                    'model'     => $model,
+                    'attribute' => 'return_date',
+                    //'language'=> 'ru',//default Yii::app()->language
+                    //'mode'    => 'datetime',//'datetime' or 'time' ('datetime' default)
+                    'options'   => array(
+                        'dateFormat' => 'yy-mm-dd',
+                        //'timeFormat' => '',//'hh:mm tt' default
+                    ),
+                )
+            );
+            ?>
+                <i class="calendar icon"></i>
+                </div>
+        </div>
+    </div>
+
+    <div class="ui two fields">
+        <div class="field">
+            <?php echo $form->labelEx($model,'start_point');?>
+            <div class="ui mini input">
+                <?php echo $form->textField($model,'start_point',array('type'=>'text','placeholder'=>'Pickup Location')); ?>
+            </div>
+        </div>
+        <div class="field">
+            <?php echo $form->labelEx($model,'end_point');?>
+            <div class="ui mini input">
+            <?php echo $form->textField($model,'end_point',array('type'=>'text','placeholder'=>'Destinations')); ?>
+                </div>
+        </div>
+    </div>
+    <div class="field">
+        <?php echo $form->labelEx($model,'travel_reason'); ?>
+        <div class="ui mini input">
+        <?php echo $form->textField($model,'travel_reason',array('type'=>'text','placeholder'=>'Travel Reason')); ?>
+            </div>
+    </div>
+    <div class="ui divider"></div>
+    <div class="ui two fields" id="for-personal">
+        <div class="field">
+            <!--<h3 class="ui black header dividing">
+                Billing
+            </h3>
+            <br />-->
+            <?php  echo $form->labelEx($model,'bill_dept');?>
+            <?php //echo $form->textField($model,'bill_dept',array('type'=>'text','placeholder'=>'Billing Department')); ?>
+            <select id="Transport_bill_dept" name="Transport[bill_dept]" class="ui selection dropdown">
+                <option value="">Select Department...</option>
+                <option value="10WPF(GJ&D)">10WPF(GJ&D)</option>
+                <option value="A I Enterprise(7606201)">A I Enterprise(7606201)</option>
+                <option value="A.A.Foundation">A.A.Foundation</option>
+                <option value="Aarong C/S">Aarong C/S</option>
+                <option value="Aarong Gulshan">Aarong Gulshan</option>
+                <option value="Aarong Lalmatia">Aarong Lalmatia</option>
+                <option value="Aarong Maghbazar">Aarong Maghbazar</option>
+                <option value="Aarong Mirpur">Aarong Mirpur</option>
+                <option value="Aarong Uttara">Aarong Uttara</option>
+                <option value="Aarong(Picnic)">Aarong(Picnic)</option>
+                <option value="Academic/MED">Academic/MED</option>
+                <option value="Administration">Administration</option>
+                <option value="Advocacy">Advocacy</option>
+                <option value="Advocacy for social change(378)">Advocacy for social change(378)</option>
+                <option value="Agriculture Program(AFSP)">Agriculture Program(AFSP)</option>
+                <option value="AI Enterprise(Jessore)">AI Enterprise(Jessore)</option>
+                <option value="AI Enterprise(Rangpur)">AI Enterprise(Rangpur)</option>
+                <option value="Alive & Thrive(271)">Alive & Thrive(271)</option>
+                <option value="AMI">AMI</option>
+                <option value="Architecture(BU)">Architecture(BU)</option>
+                <option value="AVRDC(0121057)">AVRDC(0121057)</option>
+                <option value="Banglalion">Banglalion</option>
+                <option value="BARDC(68217)">BARDC(68217)</option>
+                <option value="BCDM Rajendropur">BCDM Rajendropur</option>
+                <option value="BCUP">BCUP</option>
+                <option value="BDFP">BDFP</option>
+                <option value="BDFP- Chilling Plant">BDFP- Chilling Plant</option>
+                <option value="BDP">BDP</option>
+                <option value="BEEL(212)">BEEL(212)</option>
+                <option value="BEP">BEP</option>
+                <option value="BEP(ADP)">BEP(ADP)</option>
+                <option value="BEP(BPPS)">BEP(BPPS)</option>
+                <option value="BEP(ESP)">BEP(ESP)</option>
+                <option value="BLC Gulshan">BLC Gulshan</option>
+                <option value="BLC Rajshahi">BLC Rajshahi</option>
+                <option value="BLD">BLD</option>
+                <option value="BPL">BPL</option>
+                <option value="BRAC Afghanistan">BRAC Afghanistan</option>
+                <option value="BRAC Bank">BRAC Bank</option>
+                <option value="BRAC Haiti">BRAC Haiti</option>
+                <option value="BRAC IASS Study(0121111)">BRAC IASS Study(0121111)</option>
+                <option value="BRAC Inn">BRAC Inn</option>
+                <option value="BRAC International">BRAC International</option>
+                <option value="BRAC Liberia">BRAC Liberia</option>
+                <option value="BRAC Management">BRAC Management</option>
+                <option value="BRAC Myanmar">BRAC Myanmar</option>
+                <option value="BRAC Net">BRAC Net</option>
+                <option value="BRAC NET">BRAC NET</option>
+                <option value="BRAC Pakistan">BRAC Pakistan</option>
+                <option value="BRAC Poltry Farms">BRAC Poltry Farms</option>
+                <option value="BRAC Printers">BRAC Printers</option>
+                <option value="BRAC Printing Pack">BRAC Printing Pack</option>
+                <option value="BRAC Services Ltd.(BCI)">BRAC Services Ltd.(BCI)</option>
+                <option value="BRAC South Sudan">BRAC South Sudan</option>
+                <option value="BRAC Srilanka">BRAC Srilanka</option>
+                <option value="BRAC Tanzania">BRAC Tanzania</option>
+                <option value="BRAC UGANDA">BRAC UGANDA</option>
+                <option value="BRAC University">BRAC University</option>
+                <option value="BRAC University (BBS)">BRAC University (BBS)</option>
+                <option value="BRAC University (Criket)">BRAC University (Criket)</option>
+                <option value="BRAC University (EEE)">BRAC University (EEE)</option>
+                <option value="BRAC University (MBA)">BRAC University (MBA)</option>
+                <option value="BRAC University (MNS)">BRAC University (MNS)</option>
+                <option value="BRAC University(Adventure Club)">BRAC University(Adventure Club)</option>
+                <option value="BRAC University(BDI)">BRAC University(BDI)</option>
+                <option value="BRAC University(BIGH)">BRAC University(BIGH)</option>
+                <option value="BRAC University(BIL)">BRAC University(BIL)</option>
+                <option value="BRAC University(CSE)">BRAC University(CSE)</option>
+                <option value="BRAC University(English)">BRAC University(English)</option>
+                <option value="BRAC University(ESS)">BRAC University(ESS)</option>
+                <option value="BRAC University(I.G.S.)">BRAC University(I.G.S.)</option>
+                <option value="BRAC University(Pharmacy)">BRAC University(Pharmacy)</option>
+                <option value="BRAC University(Savar)">BRAC University(Savar)</option>
+                <option value="BRAC University(School of Law)">BRAC University(School of Law)</option>
+                <option value="BRAC University(SPH)">BRAC University(SPH)</option>
+                <option value="BRAC University(Treasurer)">BRAC University(Treasurer)</option>
+                <option value="BRAC-BCDM Savar(BCI)">BRAC-BCDM Savar(BCI)</option>
+                <option value="Broiler Processing Plant">Broiler Processing Plant</option>
+                <option value="BU-IED">BU-IED</option>
+                <option value="Bull Station Mymensing">Bull Station Mymensing</option>
+                <option value="CDSP">CDSP</option>
+                <option value="CEP">CEP</option>
+                <option value="CEP & IDP">CEP & IDP</option>
+                <option value="CEP(JP-VAW)">CEP(JP-VAW)</option>
+                <option value="CFPR-TUP">CFPR-TUP</option>
+                <option value="Clinic Duty(HNPP)">Clinic Duty(HNPP)</option>
+                <option value="Communications">Communications</option>
+                <option value="Construction">Construction</option>
+                <option value="Construction & Maintenance">Construction & Maintenance</option>
+                <option value="Corporate Office">Corporate Office</option>
+                <option value="Cox Bazar Salt Factory">Cox Bazar Salt Factory</option>
+                <option value="Dattapara Staff Housing">Dattapara Staff Housing</option>
+                <option value="DBR(3380)">DBR(3380)</option>
+                <option value="DECC">DECC</option>
+                <option value="Design Studio(Aarong)">Design Studio(Aarong)</option>
+                <option value="Devpro Centre">Devpro Centre</option>
+                <option value="Donor Liaison Office">Donor Liaison Office</option>
+                <option value="EHC(HNPP)">EHC(HNPP)</option>
+                <option value="Enterprise">Enterprise</option>
+                <option value="Enterprise(Nursery)">Enterprise(Nursery)</option>
+                <option value="Enterprise(RHMP)">Enterprise(RHMP)</option>
+                <option value="Feed Enterprise">Feed Enterprise</option>
+                <option value="Feed Mill, Manikgonj">Feed Mill, Manikgonj</option>
+                <option value="Feed Mill, Sreepur">Feed Mill, Sreepur</option>
+                <option value="Finance & Accounts">Finance & Accounts</option>
+                <option value="Fisheris Enterprise">Fisheris Enterprise</option>
+                <option value="GDN">GDN</option>
+                <option value="Gender Justice and Diversity">Gender Justice and Diversity</option>
+                <option value="GQAL(352)">GQAL(352)</option>
+                <option value="Grameen Phone">Grameen Phone</option>
+                <option value="HNPP">HNPP</option>
+                <option value="HNPP(411)">HNPP(411)</option>
+                <option value="HNPP(41301029)">HNPP(41301029)</option>
+                <option value="HNPP(Saline)">HNPP(Saline)</option>
+                <option value="HNPP-MIH(382)">HNPP-MIH(382)</option>
+                <option value="HO (Staff duty)">HO (Staff duty)</option>
+                <option value="HRD">HRD</option>
+                <option value="HRLS">HRLS</option>
+                <option value="HRLS 39413115">HRLS 39413115</option>
+                <option value="HRLS PRI(317)">HRLS PRI(317)</option>
+                <option value="IAU(38501401)">IAU(38501401)</option>
+                <option value="ICT">ICT</option>
+                <option value="IDP">IDP</option>
+                <option value="IDP for Haor Project">IDP for Haor Project</option>
+                <option value="IFA(395)">IFA(395)</option>
+                <option value="IFA-HNPP(395)">IFA-HNPP(395)</option>
+                <option value="Internal Audit">Internal Audit</option>
+                <option value="Land & Estate">Land & Estate</option>
+                <option value="LANSA(0121085)">LANSA(0121085)</option>
+                <option value="Legal & Compliance">Legal & Compliance</option>
+                <option value="Logistic">Logistic</option>
+                <option value="Madhupur, BLC">Madhupur, BLC</option>
+                <option value="Maintenance">Maintenance</option>
+                <option value="Malaria(292)">Malaria(292)</option>
+                <option value="Malaria(Pick-up)">Malaria(Pick-up)</option>
+                <option value="Management Audit">Management Audit</option>
+                <option value="Micro Finance">Micro Finance</option>
+                <option value="Midwifery Program (SPH)">Midwifery Program (SPH)</option>
+                <option value="Migration Prog(417)">Migration Prog(417)</option>
+                <option value="MNCH Program(387)">MNCH Program(387)</option>
+                <option value="MNCH Program(388)">MNCH Program(388)</option>
+                <option value="Monitoring">Monitoring</option>
+                <option value="Nabadhara School,Banasree">Nabadhara School,Banasree</option>
+                <option value="Ombudsperson Office">Ombudsperson Office</option>
+                <option value="Organizational Culture Change">Organizational Culture Change</option>
+                <option value="PACE Program(BEP)">PACE Program(BEP)</option>
+                <option value="PEMS">PEMS</option>
+                <option value="Position(352)">Position(352)</option>
+                <option value="Poultry & Feed Enterprize">Poultry & Feed Enterprize</option>
+                <option value="Poultry Enterprise">Poultry Enterprise</option>
+                <option value="Poultry Farm,Magura">Poultry Farm,Magura</option>
+                <option value="Procurement">Procurement</option>
+                <option value="PSE">PSE</option>
+                <option value="PSU">PSU</option>
+                <option value="RED">RED</option>
+                <option value="RED(27306603)">RED(27306603)</option>
+                <option value="Satrong(Communication)">Satrong(Communication)</option>
+                <option value="Security">Security</option>
+                <option value="Seed Farm Sherpur">Seed Farm Sherpur</option>
+                <option value="Sericulture Enterprize">Sericulture Enterprize</option>
+                <option value="Shiraj">Shiraj</option>
+                <option value="SHRC(36701908)">SHRC(36701908)</option>
+                <option value="SIL">SIL</option>
+                <option value="SOFEA(27306603)">SOFEA(27306603)</option>
+                <option value="Solar Enterprise">Solar Enterprise</option>
+                <option value="SPC Bogura">SPC Bogura</option>
+                <option value="SPC Tongi">SPC Tongi</option>
+                <option value="Special Project">Special Project</option>
+                <option value="Student Affairs(BU)">Student Affairs(BU)</option>
+                <option value="STUP(33601610)">STUP(33601610)</option>
+                <option value="TB Control Program(328)">TB Control Program(328)</option>
+                <option value="TB/HIV(265)">TB/HIV(265)</option>
+                <option value="Tea Estate Division">Tea Estate Division</option>
+                <option value="Teaching & Learning Center(BU)">Teaching & Learning Center(BU)</option>
+                <option value="Telephone">Telephone</option>
+                <option value="TIGA(383)">TIGA(383)</option>
+                <option value="Tongi store">Tongi store</option>
+                <option value="Transport">Transport</option>
+                <option value="Urban Guest House">Urban Guest House</option>
+                <option value="Urban Poventy Project(BDI)">Urban Poventy Project(BDI)</option>
+                <option value="USCP(406)">USCP(406)</option>
+                <option value="VCPN">VCPN</option>
+                <option value="Village(62)">Village(62)</option>
+                <option value="Vision Bangladesh(414)">Vision Bangladesh(414)</option>
+                <option value="WASH">WASH</option>
+                <option value="Workshop">Workshop</option>
+                <option value="YP Program(1265)">YP Program(1265)</option>
+            </select>
+
+        </div>
+
+        <div class="field">
+            <!--<h3 class="ui black header dividing">
+                Supervisor
+            </h3>
+            <br/>-->
+            <?php echo $form->labelEx($model,'transport_flow_supervisor_id');?>
+            <?php // echo $form->textField($model,'transport_flow_supervisor_id',array('type'=>'text','placeholder'=>'Supervisor')); ?>
+            <?php  $sp_name = TransportFlowSupervisor::model()->findAll(array('select'=>'name, id','order' => 'name ASC'));
+            echo $form->dropDownList($model,'transport_flow_supervisor_id', CHtml::listData($sp_name,'id',  'name'),array('empty' => 'Select Name...', 'class'=>'ui selection dropdown')); ?>
+        </div>
+    </div>
+
+    <div class="field">
+        <!--<h3 class="ui header black dividing">
+            Remarks
+        </h3>-->
+
+        <?php echo $form->labelEx($model,'remarks');?>
+        <div class="ui mini input">
+        <?php echo $form->textField($model,'remarks',array('type'=>'text','placeholder'=>'Remarks')); ?>
+            </div>
+    </div>
+
+    <!--<div class="inline field">
+        <?php /*echo $form->labelEx($model,'status');*/?>
+        <?php /*echo $form->textField($model,'status',array('type'=>'text','placeholder'=>'Status')); */?>
+    </div>-->
+
+
+   <!-- <div class="inline field">
+        <?php /*echo $form->labelEx($model,'supervisor_remarks');*/?>
+        <?php /*echo $form->textField($model,'supervisor_remarks',array('type'=>'text','placeholder'=>'Supervisor Remarks')); */?>
+    </div>-->
+
+    <div class="row buttons">
+        <?php //echo CHtml::submitButton($model->isNewRecord ? 'Submit' : 'Submit',  array('class'=>'teal labeled icon ui button small')); ?>
+        <div class="ui right small submit teal labeled icon button">
+            <i class="right arrow icon"></i>
+            Send
+        </div>
+    </div>
+</div>
+<?php $this->endWidget(); ?>
+<script type="text/javascript">
+    $(function(){
+        $("#Transport_travel_type input").change(
+            function(){
+                if($(this).val() == 1 ) {
+                    $('#for-personal').hide('slow');
+                } else {
+                    $('#for-personal').show('slow');
+                }
+            }
+        );
+
+        $("#request_type input").change(
+            function(){
+                if($(this).val() == 0 ) {
+                    $('#request_type_options').hide('slow');
+                } else {
+                    $('#request_type_options').show('slow');
+                }
+            }
+        );
+
+    });
+</script>

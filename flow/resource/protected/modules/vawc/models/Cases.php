@@ -1,0 +1,150 @@
+<?php
+
+/**
+ * This is the model class for table "vawc_cases".
+ *
+ * The followings are the available columns in table 'vawc_cases':
+ * @property integer $id
+ * @property string $case_summary
+ * @property string $case_details
+ * @property string $caller_name
+ * @property string $caller_mobile
+ * @property string $caller_address
+ * @property string $voice_path
+ * @property string $datetime
+ * @property integer $priority
+ * @property integer $created_by
+ * @property string $created_time
+ * @property integer $updated_by
+ * @property string $updated_time
+ * @property integer $status
+ * @property integer $violance_type
+ * @property integer $is_caller_victim
+ * @property integer $victim_current_condition
+ * @property string $caller_id
+ * @property string $unuque_id
+ * @property string $d_id
+ * @property string $d_ext
+ */
+class Cases extends CActiveRecord {
+
+    /**
+     * @return string the associated database table name
+     */
+    public function tableName() {
+        return 'vawc_cases';
+    }
+
+    /**
+     * @return array validation rules for model attributes.
+     */
+    public function rules() {
+        // NOTE: you should only define rules for those attributes that
+        // will receive user inputs.
+        return array(
+            array('priority, created_by, updated_by, status, is_caller_victim, violance_type, victim_current_condition', 'numerical', 'integerOnly' => true),
+            array('case_summary, caller_name, caller_mobile, voice_path', 'length', 'max' => 127),
+            array('violance_type, case_summary, victim_current_condition', 'required'),
+            array('caller_address', 'length', 'max' => 256),
+            array('case_details, datetime, created_time, updated_time', 'safe'),
+            // The following rule is used by search().
+            // @todo Please remove those attributes that should not be searched.
+            array('id, case_summary,caller_id, is_caller_victim, violance_type, victim_current_condition, unuque_id, case_details, d_id, d_ext, caller_name, caller_mobile, caller_address, voice_path, datetime, priority, created_by, created_time, updated_by, updated_time, status', 'safe', 'on' => 'search'),
+        );
+    }
+
+    /**
+     * @return array relational rules.
+     */
+    public function relations() {
+        // NOTE: you may need to adjust the relation name and the related
+        // class name for the relations automatically generated below.
+        return array(
+        );
+    }
+
+    /**
+     * @return array customized attribute labels (name=>label)
+     */
+    public function attributeLabels() {
+        return array(
+            'id' => 'ID',
+            'case_summary' => 'Location, Name, Age',
+            'case_details' => 'Case Notes',
+            'caller_name' => 'Caller Name',
+            'caller_mobile' => 'Caller Mobile',
+            'caller_address' => 'Caller Address',
+            'voice_path' => 'Voice Path',
+            'datetime' => 'Datetime',
+            'priority' => 'Priority',
+            'created_by' => 'Created By',
+            'created_time' => 'Created Time',
+            'updated_by' => 'Updated By',
+            'updated_time' => 'Updated Time',
+            'status' => 'Status',
+            'violance_type' => 'Violance Type',
+            'is_caller_victim' => 'Is Caller Victim?',
+            'victim_current_condition' => 'Victim Condition',
+            'caller_id' => 'Caller Number',
+            'unuque_id' => 'Call unique id',
+            'd_id' => 'Dial Id',
+            'd_ext' => 'Dial Extension'
+        );
+    }
+
+    /**
+     * Retrieves a list of models based on the current search/filter conditions.
+     *
+     * Typical usecase:
+     * - Initialize the model fields with values from filter form.
+     * - Execute this method to get CActiveDataProvider instance which will filter
+     * models according to data in model fields.
+     * - Pass data provider to CGridView, CListView or any similar widget.
+     *
+     * @return CActiveDataProvider the data provider that can return the models
+     * based on the search/filter conditions.
+     */
+    public function search() {
+        // @todo Please modify the following code to remove attributes that should not be searched.
+
+        $criteria = new CDbCriteria;
+
+        $criteria->compare('id', $this->id);
+        $criteria->compare('case_summary', $this->case_summary, true);
+        $criteria->compare('case_details', $this->case_details, true);
+        $criteria->compare('caller_name', $this->caller_name, true);
+        $criteria->compare('caller_mobile', $this->caller_mobile, true);
+        $criteria->compare('caller_address', $this->caller_address, true);
+        $criteria->compare('voice_path', $this->voice_path, true);
+        $criteria->compare('datetime', $this->datetime, true);
+        $criteria->compare('priority', $this->priority);
+        $criteria->compare('created_by', $this->created_by);
+        $criteria->compare('created_time', $this->created_time, true);
+        $criteria->compare('updated_by', $this->updated_by);
+        $criteria->compare('updated_time', $this->updated_time, true);
+        $criteria->compare('status', $this->status);
+        $criteria->compare('violance_type', $this->violance_type);
+        $criteria->compare('is_caller_victim', $this->is_caller_victim);
+        $criteria->compare('victim_current_condition', $this->victim_current_condition);
+        $criteria->compare('violance_type', $this->violance_type);
+        $criteria->compare('caller_id', $this->caller_id);
+        $criteria->compare('unuque_id', $this->unuque_id);
+        $criteria->compare('d_id', $this->d_id);
+        $criteria->compare('d_ext', $this->d_ext);
+
+        return new CActiveDataProvider($this, array(
+            'criteria' => $criteria,
+        ));
+    }
+
+    /**
+     * Returns the static model of the specified AR class.
+     * Please note that you should have this exact method in all your CActiveRecord descendants!
+     * @param string $className active record class name.
+     * @return Cases the static model class
+     */
+    public static function model($className = __CLASS__) {
+        return parent::model($className);
+    }
+
+}
