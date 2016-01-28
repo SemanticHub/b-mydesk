@@ -1,0 +1,4 @@
+#header, #footer, .ui.three.wide.column.menu-buttons { display: none}
+div.thirteen.wide.column { width: 100% !important }
+.row.buttons {display: none}
+/* .ui.fluid.form.segment */
